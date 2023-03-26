@@ -1,0 +1,144 @@
+@import url(https://fonts.googleapis.com/css?family=Karla:300,400,500,600,700);
+
+@import url(https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  /* Dark */
+  --bg-color: #1c1c1c;
+  --card-bg-color: #1f2937;
+  --bg-light: #273549;
+  --font-color: #fff;
+  --font-gray: #d5d4d8;
+  --font-green: #4adf86;
+  --fg-color: #273549;
+  --ps-color: #55f991;
+  --btn-color: #10b981;
+}
+
+.lightMode {
+  --bg-color: #1c1c1c;
+  --card-bg-color: #ecfdf5;
+  --bg-light: #273549;
+  --font-color: #2b283a;
+  --font-gray: #6b7280;
+  --font-green: #4adf86;
+  --fg-color: #273549;
+  --ps-color: #5def92;
+  --btn-color: #10b981;
+}
+
+body {
+  background: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-family: Karla;
+  color: var(--font-color);
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
+}
+
+span {
+  font-family: Karla;
+  color: var(--font-green);
+}
+
+.container {
+  width: 550px;
+  height: 550px;
+}
+
+.card {
+  background: var(--card-bg-color);
+  padding: 5rem 3rem;
+}
+
+p {
+  color: var(--font-gray);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  font-weight: 100;
+}
+
+.password-wrapper {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.password-container {
+  background: var(--fg-color);
+  border: none;
+  width: 45%;
+  height: 2rem;
+  border-radius: 5px;
+}
+
+#input2,
+#input1 {
+  color: var(--ps-color);
+  margin-bottom: 0;
+  padding: 5px 5px;
+}
+
+button {
+  margin-top: 1.5rem;
+  background: var(--btn-color);
+  color: #fff;
+  cursor: pointer;
+  padding: 0.55em;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+button:active {
+  transform: scale(0.94);
+}
+
+hr {
+  border: none;
+  border-top: 0.1rem solid var(--fg-color);
+  margin: 1.7rem 0 1.7rem 0;
+}
+
+.password {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+input {
+  background: var(--fg-color);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1.65rem;
+  color: var(--ps-color);
+  width: 45%;
+  height: 2rem;
+}
+
+li {
+  list-style: none;
+}
+
+.mode {
+  margin-bottom: 1rem;
+  cursor: pointer;
+}

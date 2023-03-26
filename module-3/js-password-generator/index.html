@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="description">
+          <h1>Generate a <span class="special-word">random password</span></h1>
+          <p>Never use an insecure password again</p>
+          <div id="length">
+            <p>Password length (8-16 characters):</p>
+            <input
+              type="number"
+              id="password-length"
+              maxlength="16"
+              minlength="8" />
+          </div>
+          <button class="btn" onclick="renderPasswords()">
+            Generate passwords
+          </button>
+          <hr />
+        </div>
+        <div class="password-wrapper">
+          <div class="password-container">
+            <p class="password-output" id="input1"></p>
+          </div>
+          <div class="password-container">
+            <p class="password-output" id="input2"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
