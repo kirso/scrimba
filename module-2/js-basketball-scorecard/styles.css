@@ -1,0 +1,137 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+@font-face {
+  font-family: 'CursedTimerUliL';
+  src: url('/Font/CursedTimerUliL.ttf') format('ttf');
+}
+
+body {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  border: 3px solid #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  background-color: #1b244a;
+  width: 50%;
+  height: 50%;
+}
+
+.score-container {
+  font-family: 'CursedTimerUliL';
+  font-size: 3em;
+  color: #f94f6d;
+  background-color: #080001;
+  border-radius: 5px;
+}
+
+h3 {
+  text-transform: capitalize;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #eeeeee;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+button {
+  margin-top: 1rem;
+  font-family: CursedTimerUliL;
+  background-color: #1b244a;
+  color: #9aabd8;
+  padding: 1rem;
+  border: solid 2px #9aabd8;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+button:hover {
+  color: #fff;
+  border-color: #fff;
+}
+
+@media screen and (max-width: 745px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+}
