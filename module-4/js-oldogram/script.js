@@ -61,8 +61,3 @@ for (let i = 0; i < posts.length; i++) {
 }
 
 mainEl.innerHTML = html;
-
-let like = getElementById("like").addEventListener("click", () => {
-	let integer = Number(posts.likes);
-	return (integer += 1);
-});
