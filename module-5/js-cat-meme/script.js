@@ -3,11 +3,13 @@ import { catsData } from './data.js'
 const radios = document.getElementById('emotion-radios')
 const getImageBtn = document.getElementById('get-image-btn')
 const gifsOnlyOption = document.getElementById('gifs-only-option')
-
-getImageBtn.addEventListener('click', getMatchingCatsArray)
+const memeModal = document.getElementById('meme-modal')
+const memeModalInner = document.getElementById('meme-modal-inner')
+const closeBtn = document.getElementById('meme-modal-close-btn')
 
 radios.addEventListener('change', highlightCheckedOption)
-
+closeBtn.addEventListener('click', () => closeModal)
+getImageBtn.addEventListener('click', renderCat)
 function highlightCheckedOption(e) {
 	const radios = document.getElementsByClassName('radio')
 	for (let radio of radios) {
@@ -15,16 +17,35 @@ function highlightCheckedOption(e) {
 	}
 	document.getElementById(e.target.id).parentElement.classList.add('highlight')
 }
+function closeModal() {
+	memeModal.style.display = 'none'
+}
+function renderCat() {
+	const catObject = getSingleCatObject()
+	memeModalInner.innerHTML = `
+	<img class='cat-img'
+	src="./img/${catObject.image}"
+	alt="${catObject.alt}"
+	>`
+	memeModal.style.display = 'flex'
+}
+function getSingleCatObject() {
+	const catsArray = getMatchingCatsArray()
+	const randomCatIndex = Math.floor(Math.random() * catsArray.length)
+	return catsArray.length === 1 ? catsArray[0] : catsArray[randomCatIndex]
+}
 
 function getMatchingCatsArray() {
 	if (document.querySelector('input[type="radio"]:checked')) {
 		const selectedEmotion = document.querySelector('input[type="radio"]:checked').value
 		const isGif = gifsOnlyOption.checked
 
-		const filteredCatsArray = catsData.filter((cat) => {
-			return cat.emotionTags.includes(selectedEmotion)
+		const matchingCatsArray = catsData.filter((cat) => {
+			if (isGif) {
+				return cat.emotionTags.includes(selectedEmotion) && cat.isGif === true
+			} else return cat.emotionTags.includes(selectedEmotion)
 		})
-		console.log(filteredCatsArray)
+		return matchingCatsArray
 	}
 }
 
